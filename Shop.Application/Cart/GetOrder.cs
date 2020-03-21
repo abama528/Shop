@@ -27,16 +27,17 @@ namespace Shop.Application.Cart
             public CustomerInformation CustomerInformation { get; set; }
 
             public int GetTotalCharge() => Products.Sum(x => x.Value * x.Qty);
+
         }
 
         public class Product
         {
 
-            public int Value { get; set; }
+            public int ProductId { get; set; }
             public int Qty { get; set; }
             public int StockId { get; set; }
+            public int Value { get; set; }
 
-            public int ProductId { get; set; }
 
         }
 
@@ -70,16 +71,7 @@ namespace Shop.Application.Cart
 
             var cartList = JsonConvert.DeserializeObject<List<CartProduct>>(cart);
 
-            //var listOfProducts = cartList.Select(item => _ctx.Stock
-            //      .Include(x => x.Product)
-            //      .Where(x => x.Id == item.StockId)
-            //      .Select(x => new Product
-            //      {
-            //          ProductId = x.ProductId,
-            //          StockId = item.StockId,
-            //          Value = (int)(x.Product.Value * 100),
-            //          Qty = cartList.FirstOrDefault(y => y.StockId == x.Id).Qty
-            //      }).FirstOrDefault()).ToList();
+            
             var itemsInCart = cartList.Select(x => x.StockId).ToList();
 
             var listOfProducts = _ctx.Stock
@@ -103,18 +95,7 @@ namespace Shop.Application.Cart
             var customerInformation = JsonConvert.DeserializeObject<Shop.Domain.Models.CustomerInformation>(customerInfoString);
 
 
-            //var response = cartList.Select(item => _ctx.Stock.Include(x => x.Product)
-            //        .Where(x => x.Id == item.StockId)
-            //        .Select(x => new Response
-            //        {
-            //            Name = x.Product.Name,
-            //            Value = $"$ {x.Product.Value.ToString("N2")}",
-            //            StockId = item.StockId,
-            //            Qty = item.Qty
-            //        })
-            //        .FirstOrDefault())
-            //        .ToList();
-
+          
             return new Response
             {
                 Products = listOfProducts,
