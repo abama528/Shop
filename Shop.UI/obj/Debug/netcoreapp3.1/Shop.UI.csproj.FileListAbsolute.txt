@@ -163,3 +163,4 @@ C:\Users\ACER\source\repos\Shop\Shop.UI\obj\Debug\netcoreapp3.1\Razor\Pages\Chec
 C:\Users\ACER\source\repos\Shop\Shop.UI\obj\Debug\netcoreapp3.1\Razor\Pages\Checkout\Payment.cshtml.g.cs
 C:\Users\ACER\source\repos\Shop\Shop.UI\bin\Debug\netcoreapp3.1\Stripe.net.dll
 C:\Users\ACER\source\repos\Shop\Shop.UI\obj\Debug\netcoreapp3.1\Shop.UI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ACER\source\repos\Shop\Shop.UI\obj\Debug\netcoreapp3.1\Razor\Pages\Order.cshtml.g.cs
